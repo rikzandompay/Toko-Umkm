@@ -194,8 +194,11 @@
             </nav>
             <!-- Footer Nav -->
             <div class="px-4 pb-6 border-t border-slate-200 pt-4">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
                 <a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-100 font-inter text-sm font-semibold cursor-pointer active:opacity-80 transition-all duration-300 hover:pl-2"
-                    href="{{ route('login') }}">
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <span class="material-symbols-outlined" data-icon="logout">logout</span>
                     Keluar
                 </a>
